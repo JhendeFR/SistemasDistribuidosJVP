@@ -5,7 +5,6 @@
 package com.mycompany.bibliotecafacu;
 
 /**
- *
  * @author Jhendef
  */
 public class Publicacion {
