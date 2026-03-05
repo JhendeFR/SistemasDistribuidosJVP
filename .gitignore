@@ -1,31 +1,115 @@
-# Ignorar archivos compilados de Java (Binarios)
-*.class
+# =====================================
+# ARCHIVOS TEMPORALES Y DE SISTEMA
+# =====================================
 *.log
-*.ctxt
+*.tmp
+*.bak
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+*.orig
+*.rej
+*.lock
+*.pid
 
-# Archivos de empaquetado
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# Carpeta de salida de Maven (donde se guarda lo compilado)
-target/
-
-# Archivos de configuración de IDEs (NetBeans, IntelliJ, Eclipse)
-nbproject/
-nbbuild/
-nbdist/
-.netbeans/
+# =====================================
+# ENTORNOS DE DESARROLLO
+# =====================================
+# Visual Studio / VS Code / IntelliJ / Eclipse
+.vscode/
 .idea/
 *.iml
-.settings/
-.project
-.classpath
+*.ipr
+*.iws
+*.user
+*.suo
+*.userprefs
+*.vs/
+*.vscode/
 
-# Archivos temporales del sistema
-.DS_Store
-Thumbs.db
+# =====================================
+# C# / .NET
+# =====================================
+# Carpetas comunes de compilación
+**/bin/
+**/obj/
+**/Debug/
+**/Release/
+**/publish/
+
+# Archivos compilados
+*.dll
+*.exe
+*.pdb
+*.mdb
+*.cache
+
+# Paquetes NuGet
+*.nupkg
+*.snupkg
+**/packages/
+.nuget/
+
+# Archivos de pruebas o cobertura
+**/TestResult*/
+*.coverage
+*.coveragexml
+*.codecoverage
+
+# =====================================
+# JAVA
+# =====================================
+# Carpetas de compilación
+**/target/
+**/out/
+**/build/
+**/dist/
+
+# Archivos compilados
+*.class
+*.jar
+*.war
+*.ear
+
+# Herramientas de compilación
+.gradle/
+.mvn/
+.gradle-cache/
+.settings/
+.classpath
+.project
+
+# =====================================
+# LOGS / TEMPORALES
+# =====================================
+**/logs/
+**/tmp/
+**/cache/
+**/temp/
+
+# =====================================
+# SISTEMAS DE CONTROL / CI
+# =====================================
+*.coverage
+*.codecov
+*.gcov
+*.gcda
+*.gcno
+*.lcov
+*.sonar/
+/13-10 SOAP Java/ClienteOperaciones/nbproject/private/
+/13-10 SOAP Java/JavaApplication14/nbproject/private/
+/20-10 Cliete Rest/java/ConsumirPersona/nbproject/private/
+
+# =====================================
+# NODE.JS / JAVASCRIPT
+# =====================================
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+
