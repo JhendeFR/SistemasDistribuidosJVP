@@ -18,7 +18,7 @@ public class Cliente {
 
     public static void main(String[] args) {
         try {
-            IOperaciones hola = (IOperaciones) Naming.lookup("rmi://localhost/Hola");
+            IOperaciones hola = (IOperaciones) Naming.lookup("rmi://localhost/Operaciones");
             Scanner sc = new Scanner(System.in);
             int n;
             int op;
