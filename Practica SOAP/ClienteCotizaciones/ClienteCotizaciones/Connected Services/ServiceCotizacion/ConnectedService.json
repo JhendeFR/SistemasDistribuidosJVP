@@ -1,0 +1,16 @@
+{
+  "ExtendedData": {
+    "inputs": [
+      "http://localhost:50485/WebService.asmx"
+    ],
+    "collectionTypes": [
+      "System.Array",
+      "System.Collections.Generic.Dictionary`2"
+    ],
+    "namespaceMappings": [
+      "*, ServiceCotizacion"
+    ],
+    "targetFramework": "net10.0-windows",
+    "typeReuseMode": "All"
+  }
+}

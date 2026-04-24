@@ -19,12 +19,10 @@ public class Bienestar extends UnicastRemoteObject implements IBienestar{
     @Override
     public ArrayList<Nota> ObtenerHistorial(String ci) throws RemoteException{
         ArrayList<Nota> nota = new ArrayList<Nota>();
-        String materia1 = "Distri";
-        int n1 = 85;
-        String materia2 = "Arqui";
-        int n2 = 85;
-        String materia3 = "QA";
-        int n3 = 85;
+        nota.add(new Nota("Distri", 85));
+        nota.add(new Nota("Arqui", 85));
+        nota.add(new Nota("QA", 85));
+        
         return nota;
     }
 }

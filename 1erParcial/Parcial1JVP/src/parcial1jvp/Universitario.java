@@ -35,10 +35,15 @@ public class Universitario extends UnicastRemoteObject implements IUniversitario
             output.writeUTF("verificar");
             String respuestaTCP = input.readUTF();
             if(respuestaTCP.equals("encontrado")){
-                IBienestar cnb = (IBienestar) Naming.lookup("rmi://localhost/Bienestar");
+                IBienestar cnb = (IBienestar) Naming.lookup("rmi://localhost:1098/Bienestar");
                 ArrayList<Nota> resb = cnb.ObtenerHistorial(ci);
                 //tendria que sacar el promedio con un foreach o algo asi y guardarlo en una variable auxiliar
-                double promedio = 85;
+                double suma = 0;
+                for (Nota n : resb) {
+                    suma += n.calificacion;
+                }
+                double promedio = resb.isEmpty() ? 0 : (suma / resb.size());
+                
                 if(promedio>70){
                     try(DatagramSocket udpSocket = new DatagramSocket()){
                         String mensaje = ci;
@@ -51,10 +56,17 @@ public class Universitario extends UnicastRemoteObject implements IUniversitario
                         udpSocket.receive(recibido);
                         String data = new String(recibido.getData(), 0, recibido.getLength());
                         Boolean respuestaUTP = data.equals("") ? true : false;
-                        respuesta = new RespuestaBeca(respuestaUTP,"Elegible para Beca", promedio);
+                        String motivo = respuestaUTP ? "Elegible para Beca" : "Rechazado por el área financiera";
+                        
+                        respuesta = new RespuestaBeca(respuestaUTP, motivo, promedio);
                     }
+                }else {
+                    respuesta = new RespuestaBeca(false, "Promedio insuficiente", promedio);
                 }
+            }else {
+                respuesta = new RespuestaBeca(false, "No encontrado en SEGIP", 0.0);
             }
+            
             
         } catch (IOException e){
             System.out.println("Error: Segip" + e.getMessage());
